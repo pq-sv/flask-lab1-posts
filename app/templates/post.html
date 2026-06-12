@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }} — Учебный блог{% endblock %}
+
+{% macro render_comment(comment, level=0) %}
+    <article class="comment" data-level="{{ level }}">
+        <div class="comment-header">
+            <strong class="comment-author">{{ comment.author }}</strong>
+        </div>
+        <p class="comment-text">{{ comment.text }}</p>
+
+        {% if comment.replies %}
+            <div class="replies">
+                {% for reply in comment.replies %}
+                    {{ render_comment(reply, level + 1) }}
+                {% endfor %}
+            </div>
+        {% endif %}
+    </article>
+{% endmacro %}
+
+{% block content %}
+<article class="post-detail">
+    <h1 class="post-title">{{ post.title }}</h1>
+
+    <div class="post-meta">
+        <span class="post-author">{{ post.author }}</span>
+        <time class="post-date" datetime="{{ post.published_at.isoformat() }}">
+            {{ post.published_at|post_date }}
+        </time>
+    </div>
+
+    <img
+        class="post-image"
+        src="{{ url_for('static', filename=post.image) }}"
+        alt="{{ post.image_alt }}"
+    >
+
+    <p class="post-text">{{ post.text }}</p>
+</article>
+
+<section class="comment-form-section" aria-labelledby="comment-form-title">
+    <h2 id="comment-form-title">Оставьте комментарий</h2>
+    <form class="comment-form" method="post">
+        <label for="comment-text">Текст комментария</label>
+        <textarea id="comment-text" name="text" rows="5" placeholder="Введите комментарий"></textarea>
+        <button type="submit">Отправить</button>
+    </form>
+</section>
+
+<section class="comments-section" aria-labelledby="comments-title">
+    <h2 id="comments-title">Комментарии</h2>
+    {% if post.comments %}
+        <div class="comments-list">
+            {% for comment in post.comments %}
+                {{ render_comment(comment) }}
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>Комментариев пока нет.</p>
+    {% endif %}
+</section>
+{% endblock %}

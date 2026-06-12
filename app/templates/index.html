@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Посты — Учебный блог{% endblock %}
+
+{% block content %}
+<section class="posts-list">
+    <h1>Посты</h1>
+    {% for post in posts %}
+        <article class="post-card">
+            <h2><a href="{{ url_for('post_detail', post_id=post.id) }}">{{ post.title }}</a></h2>
+            <p class="meta">{{ post.author }} · {{ post.published_at|post_date }}</p>
+            <p>{{ post.text }}</p>
+        </article>
+    {% endfor %}
+</section>
+{% endblock %}

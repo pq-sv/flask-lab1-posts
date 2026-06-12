@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img" aria-label="Иллюстрация о шаблонах Flask">
+  <rect width="1200" height="600" fill="#eef4ec"/>
+  <rect x="130" y="110" width="940" height="380" rx="30" fill="#ffffff"/>
+  <rect x="210" y="180" width="260" height="250" rx="18" fill="#d4e5cf"/>
+  <rect x="520" y="180" width="470" height="38" rx="19" fill="#5f7e5b"/>
+  <rect x="520" y="258" width="390" height="30" rx="15" fill="#b9ceb5"/>
+  <rect x="520" y="318" width="420" height="30" rx="15" fill="#b9ceb5"/>
+  <rect x="520" y="378" width="320" height="30" rx="15" fill="#b9ceb5"/>
+</svg>

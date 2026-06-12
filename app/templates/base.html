@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Учебный блог{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="{{ url_for('index') }}">Учебный блог</a>
+            <nav class="main-nav" aria-label="Основная навигация">
+                <a href="{{ url_for('index') }}">Главная</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer" id="site-footer">
+        <div class="container">
+            <p>Кононов Святослав, группа 241-371</p>
+        </div>
+    </footer>
+</body>
+</html>

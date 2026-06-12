@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img" aria-label="Иллюстрация к первому посту">
+  <rect width="1200" height="600" fill="#e8eef9"/>
+  <rect x="110" y="90" width="980" height="420" rx="28" fill="#ffffff"/>
+  <circle cx="260" cy="220" r="70" fill="#b8c8e8"/>
+  <rect x="380" y="170" width="520" height="34" rx="17" fill="#5b6f99"/>
+  <rect x="380" y="240" width="640" height="28" rx="14" fill="#aebbd4"/>
+  <rect x="380" y="300" width="590" height="28" rx="14" fill="#aebbd4"/>
+  <rect x="180" y="390" width="840" height="46" rx="23" fill="#d3dcee"/>
+</svg>
